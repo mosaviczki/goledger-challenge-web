@@ -14,7 +14,7 @@
   height: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   position: relative;
   padding: 8px 62px;
 }
@@ -32,4 +32,35 @@
   display: flex;
   align-items: center;
   gap: 30px;
+}
+
+.containerNavbar ul li:hover{
+  color: #919191;
+}
+
+
+.searchBar{
+  width: 150px;
+  border-radius: 5px;
+  border: 1px solid #002F39;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.searchBar input{
+  width: 100%;
+  background-color: transparent;
+  color: black;
+  outline: none;
+  border: none;
+}
+
+.searchBar button{
+  background-color: transparent;
+  color: black;
+  outline: none;
+  border: none;
 }

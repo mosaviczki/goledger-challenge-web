@@ -1,0 +1,46 @@
+.containerSwiper {
+  width: 100%;
+  height: calc(100vh - 96px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 50px;
+  text-align: center;
+}
+.containerSlide {
+  height: 300px;
+  width: 300px;
+  border-radius: 10px;
+  background: linear-gradient(
+    90deg,
+    rgb(10, 0, 57) 0%,
+    rgb(68, 58, 180) 55%,
+    rgb(72, 167, 193) 85%,
+    rgb(76, 255, 189) 100%
+  );
+}
+
+.detailsSlider {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.icons {
+  width: 100px;
+  height: 100px;
+}
+
+.iconsSmall {
+  width: 30px;
+  height: 30px;
+}
+.country {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
