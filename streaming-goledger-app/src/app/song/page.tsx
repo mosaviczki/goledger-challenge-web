@@ -46,13 +46,13 @@ export default function Song() {
 
   return (
     <div className={styles.page}>
+      <button className={styles.buttonDialog} onClick={() => setOpen(true)}>
+        Add new song
+      </button>
       {!song && <LoadingComponent />}
 
       {song && (
         <>
-          <button className={styles.buttonDialog} onClick={() => setOpen(true)}>
-            Add new song
-          </button>
           <SliderSong items={song} />
         </>
       )}

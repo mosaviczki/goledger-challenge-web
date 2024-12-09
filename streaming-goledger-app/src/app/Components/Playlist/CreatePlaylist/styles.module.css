@@ -1,0 +1,36 @@
+.formContainer{
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.formContainer input, .formContainer select{
+    width: 200px;
+    border-radius: 10px;
+    background-color: transparent;
+    color: black;
+    border: 1px solid rgb(30, 32, 50);
+    padding: 10px;
+    outline: none;
+}
+
+.formContainer button{
+    width: 90px;
+    border-radius: 10px;
+    background-color: rgb(0, 63, 80);
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(30, 32, 50);
+    padding: 10px;
+    outline: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.buttonContainer{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
