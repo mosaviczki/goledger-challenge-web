@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { AssetsEnum } from "../../constants/assets_enum";
 import { BlockchainApi } from "../apis/blockchain";
-import SliderAlbum from "../Components/SlideAlbum";
+import SliderAlbum from "../Components/Album/SlideAlbum";
 import { AlbumType } from "@/types/albumType";
 import LoadingComponent from "../Components/Loading";
 import DialogCreateAlbum from "../Components/Album/DialogCreate";

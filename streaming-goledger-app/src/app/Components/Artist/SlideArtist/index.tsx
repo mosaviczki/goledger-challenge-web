@@ -40,7 +40,6 @@ export default function SliderArtist({
   };
 
   const updateArtist = (updatedArtist: ArtistType) => {
-    console.log(updateArtist)
     setArtists((prevItems) =>
       prevItems.map((artist) =>
         artist.name === updatedArtist.name ? updatedArtist : artist

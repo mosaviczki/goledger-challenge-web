@@ -43,6 +43,7 @@ export default function DialogCreateAlbum({
 
       if (result.data) {
         toast.success("Album create completed successfully");
+        console.log(result.data[0])
         updateAlbum(result.data[0]);
         onClose();
       }

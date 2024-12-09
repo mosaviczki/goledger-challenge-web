@@ -39,7 +39,7 @@
   align-items: center;
   justify-content: center;
 }
-/* Contêiner geral */
+
 .container {
   display: flex;
   flex-direction: column;
@@ -50,7 +50,7 @@
   border-radius: 8px;
 }
 
-/* Cabeçalho */
+
 .header {
   display: grid;
   grid-template-columns: 40px 1fr 1fr 150px;
@@ -61,7 +61,7 @@
   border-bottom: 1px solid #282828;
 }
 
-/* Lista de músicas */
+
 .trackList {
   display: flex;
   flex-direction: column;
@@ -80,7 +80,7 @@
   background-color: #282828;
 }
 
-/* Número da música */
+
 .trackNumber {
   text-align: center;
   font-size: 16px;
@@ -88,7 +88,7 @@
   color: #b3b3b3;
 }
 
-/* Informações principais da música */
+
 .trackDetails {
   display: flex;
   align-items: center;
@@ -114,7 +114,7 @@
   margin: 0;
 }
 
-/* Álbum e data */
+
 .trackAlbum {
   font-size: 14px;
   color: #b3b3b3;
