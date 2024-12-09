@@ -1,8 +1,10 @@
 import styles from "./styles.module.css";
-import { BsMusicNoteBeamed } from "react-icons/bs";
+import { BsMusicNoteBeamed, BsTrash } from "react-icons/bs";
 import { useEffect, useState } from "react";
 import { BlockchainApi } from "@/app/apis/blockchain";
 import { SongType } from "@/types/songType";
+import { toast } from "react-toastify";
+import { AssetsEnum } from "@/constants/assets_enum";
 
 type SliderSongProps = {
   items: Array<SongType>;
@@ -10,6 +12,7 @@ type SliderSongProps = {
 
 export default function SliderSong({ items }: SliderSongProps): JSX.Element {
   const [album, setAlbum] = useState<{ [key: string]: string }>({});
+  const [song, setSong] = useState<SongType[]>(items);
 
   useEffect(() => {
     const fetchArtists = async () => {
@@ -49,13 +52,42 @@ export default function SliderSong({ items }: SliderSongProps): JSX.Element {
     fetchArtists();
   }, [items]);
 
+  const handleDelete = async (name: string, key: string) => {
+    const params = {
+      key: {
+        "@assetType": AssetsEnum.song,
+        name: name,
+        album: {
+          "@assetType": AssetsEnum.album,
+          "@key": key,
+        },
+      },
+    };
+    try {
+      const result = await BlockchainApi.deleteApi(params);
+      if (result.data) {
+        setSong((prevItems) => prevItems.filter((item) => item.name !== name));
+        toast.success("Song successfully deleted");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className={styles.containerGrid}>
-      {items.length > 0 &&
+      {song.length > 0 &&
         album &&
-        items.map((item, idx) => (
+        song.map((item, idx) => (
           <div key={idx} className={styles.gridItem}>
             <div className={styles.detailsSlider}>
+              <div className={styles.editContainer}>
+                <button
+                  onClick={() => handleDelete(item.name, item.album["@key"])}
+                >
+                  <BsTrash className={styles.iconsSmall} />
+                </button>
+              </div>
               <BsMusicNoteBeamed className={styles.icons} />
               <h1>{item.name}</h1>
               <div className={styles.country}>
