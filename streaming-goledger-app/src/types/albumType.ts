@@ -1,5 +1,13 @@
 export type AlbumType = {
-  artist: { "@key": string };
+  "@assetType": string;
+  "@key": string;
+  "@lastTouchBy": string;
+  "@lastTx": string;
+  "@lastUpdated": string;
+  artist: {
+    "@assetType": string;
+    "@key": string;
+  };
   name: string;
-  year: string;
+  year: 432;
 };

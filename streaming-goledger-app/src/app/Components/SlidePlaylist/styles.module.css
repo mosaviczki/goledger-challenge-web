@@ -12,7 +12,7 @@
   height: 200px;
   width: 200px;
   border-radius: 10px;
-  background: #4267B2;
+  background: #00715a;
 }
 
 .detailsSlider {
@@ -24,7 +24,7 @@
   gap: 10px;
 }
 
-.detailsSlider h1{
+.detailsSlider h1 {
   text-align: center;
   font-size: 20px;
 }
@@ -32,7 +32,6 @@
   width: 60px;
   height: 60px;
 }
-
 
 .iconsSmall {
   width: 30px;

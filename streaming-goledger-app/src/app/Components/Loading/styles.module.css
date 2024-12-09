@@ -1,0 +1,23 @@
+.loadingContainer {
+  display: flex;
+  min-height: calc(100vh - 95px);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #666666;
+}
+
+.loadingIcon {
+  font-size: 2rem;
+  color: #003245;
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

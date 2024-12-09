@@ -7,7 +7,7 @@
 .buttonDialog{
     padding: 10px;
     border-radius: 10px;
-    background-color: rgb(0, 0, 54);
+    background-color: rgb(32, 0, 54);
     color: white;
     border: none;
     outline: none;
@@ -15,5 +15,5 @@
 }
 
 .buttonDialog:hover{
-    background-color: rgb(0, 0, 101);
+    background-color: rgb(62, 0, 103);
 }

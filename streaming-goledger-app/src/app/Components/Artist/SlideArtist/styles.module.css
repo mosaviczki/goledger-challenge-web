@@ -1,0 +1,72 @@
+.containerGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 60px;
+  row-gap: 25px;
+  padding: 16px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  width: max-content;
+}
+.gridItem {
+  height: 250px;
+  width: 250px;
+  border-radius: 10px;
+  background: #34495E;
+  overflow: hidden;
+  box-sizing: border-box;
+  text-overflow: ellipsis
+}
+.gridItem a{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.detailsSlider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 100%;
+}
+.detailsSlider h1{
+  text-align: center;
+  font-size: 20px;
+  word-wrap: break-word;
+}
+.icons {
+  width: 40px;
+  height: 40px;
+}
+
+.iconsSmall {
+  width: 20px;
+  height: 20px;
+}
+.country {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+
+}
+
+.editContainer{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 15px;
+}
+
+.editContainer button{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}

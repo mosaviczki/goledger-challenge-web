@@ -1,4 +1,5 @@
 export type PlaylistType = {
   name: string;
-  song: Array<string>;
+  songs: Array<string>;
+  "@key": string;
 };

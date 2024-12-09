@@ -1,24 +1,36 @@
-"use client"
-import { useEffect } from "react";
+"use client";
+import { useEffect, useState } from "react";
 import { AssetsEnum } from "../../constants/assets_enum";
 import { BlockchainApi } from "../apis/blockchain";
+import { PlaylistType } from "@/types/playlistType";
+import SliderPlaylist from "../Components/SlidePlaylist";
+import LoadingComponent from "../Components/Loading";
 
 export default function Playlist() {
-    useEffect(() => {
-        const fetchData = async () => {
-          try {
-            const result = await BlockchainApi.searchApi(AssetsEnum.playlist);
-            console.log(result);
-          } catch (error) {
-            console.error(error);
-          }
+  const [playlist, setPlaylist] = useState<PlaylistType[]>();
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const payload = {
+          query: {
+            selector: {
+              "@assetType": AssetsEnum.playlist,
+            },
+          },
         };
-    
-        fetchData();
-      }, []);
+        const result = await BlockchainApi.searchApi(payload);
+        setPlaylist(result);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, []);
   return (
     <>
-      <h1>Playlist</h1>
+      {!playlist && <LoadingComponent />}
+      {playlist && <SliderPlaylist items={playlist} />}
     </>
   );
 }

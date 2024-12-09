@@ -225,19 +225,10 @@ export class BlockchainApi {
     }
   }
 
-  static async createAsset(txName: string, name: string, country: string) {
-    const params = {
-      asset: [
-        {
-          "@assetType": txName,
-          name: name,
-          country: country,
-        },
-      ],
-    };
+  static async createAsset(payload: any) {
 
     try {
-      const response = await api.post("query/createAsset", params);
+      const response = await api.post("invoke/createAsset", payload);
 
       switch (response.status) {
         case 200:
@@ -266,7 +257,7 @@ export class BlockchainApi {
     }
   }
 
-  static async readAsset(payload) {
+  static async readAsset(payload: any) {
     try {
       const response = await api.post("query/readAsset", payload);
 
@@ -332,15 +323,8 @@ export class BlockchainApi {
     }
   }
 
-  static async searchApi(assetType: string) {
+  static async searchApi(payload: any) {
     try {
-      const payload = {
-        query: {
-          selector: {
-            "@assetType": assetType,
-          },
-        },
-      };
       const response = await api.post("query/search", payload);
       const { result } = response.data;
       switch (response.status) {
@@ -373,7 +357,7 @@ export class BlockchainApi {
   static async deleteApi(params: Record<string, any>) {
     try {
       const response = await api.delete("invoke/deleteAsset", {
-        params,
+        data: params,
       });
 
       switch (response.status) {
@@ -405,9 +389,7 @@ export class BlockchainApi {
 
   static async updateApi(params: Record<string, any>) {
     try {
-      const response = await api.put("invoke/updateAsset", {
-        params,
-      });
+      const response = await api.put("invoke/updateAsset", params);
 
       switch (response.status) {
         case 200:
